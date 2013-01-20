@@ -8,7 +8,7 @@ app_name = ENV['APP_NAME']
 abort("APP_NAME is required") if !app_name
 
 # Remove normal files we don't want
-%w(README public/index.html public/favicon.ico public/robots.txt app/assets/images/rails.png app/assets/javascripts/application.js app/controllers/application_controller.rb).each do |f|
+%w(README public/index.html public/favicon.ico app/assets/images/rails.png app/assets/javascripts/application.js app/controllers/application_controller.rb).each do |f|
   remove_file f
 end
 
@@ -120,6 +120,7 @@ db/*.sqlite3
 **.war
 *.rbc
 *.sassc
+*.log
 .rspec
 .redcar/
 .sass-cache
