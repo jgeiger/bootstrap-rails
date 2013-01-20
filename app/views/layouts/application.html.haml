@@ -1,0 +1,26 @@
+!!!
+%html.no-js{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en", :lang => "en"}
+  %head
+    %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }
+    %meta{ name: "viewport", content: "width=device-width, initial-scale=1.0" }
+    %title
+      = content_for?(:title) ? yield(:title) : "APP_NAME"
+    %script{src: "http://www.google.com/jsapi"}
+    = stylesheet_link_tag("application")
+    = javascript_include_tag("application")
+    = render("shared/tracking") if Rails.env.production?
+    = yield(:head)
+    = csrf_meta_tags
+  %body
+    = render("shared/navigation")
+    .container-fluid
+      #loading
+        = image_tag('layout/loading.gif', :alt => "Loading...")
+      .main
+        #flash-messages
+          = raw(flash_messages)
+        = yield
+        %br
+        %br
+        %br
+      = render("shared/footer")

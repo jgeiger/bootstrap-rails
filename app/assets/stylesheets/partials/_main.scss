@@ -1,0 +1,55 @@
+body {
+  margin-top: 40px;
+}
+
+.main {
+  margin-top: 15px;
+}
+
+.navbar .brand {
+  margin-left: 0px;
+}
+
+.navbar-fixed-bottom p {
+  padding-right: 10px;
+}
+
+#loading {
+  position: absolute;
+  top: 40px;
+  right: 30px;
+  z-index: 100;
+  display: none;
+}
+
+h3 {
+  margin-bottom: 10px;
+}
+
+.user-information {
+  margin: 10px;
+}
+
+.new-item {
+  margin: 10px;
+}
+
+/* Rails scaffold style compatibility */
+.error-explanation {
+  @extend .alert;
+  @extend .alert-error;
+  @extend .alert-block; /* optional */
+}
+
+.field_with_errors {
+  @extend .control-group.error
+}
+
+.form-actions.unstyled {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin: 0px;
+  background-color: $white;
+  border-top: none;
+}
+
